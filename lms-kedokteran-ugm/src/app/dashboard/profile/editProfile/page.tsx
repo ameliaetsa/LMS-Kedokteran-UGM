@@ -45,14 +45,7 @@ export default function EditProfile() {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 animate-fadeIn">
       <div className="bg-white rounded-2xl shadow-xl p-6 w-[520px] relative animate-slideUp">
-        
-        {/* Tombol Close */}
-        <button
-          onClick={handleCancel}
-          className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-xl"
-        >
-          ✕
-        </button>
+
 
         <h2 className="text-xl font-bold mb-6 text-center">Edit Profile</h2>
 
