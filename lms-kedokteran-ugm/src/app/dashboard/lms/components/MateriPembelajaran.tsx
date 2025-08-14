@@ -2,8 +2,10 @@
 import React, { useState } from "react";
 import { FileText, Play, List, X } from "lucide-react";
 import MaterialCard from "./MaterialCard";
+import { useRouter } from "next/navigation"; // <-- tambahkan ini
 
 const MateriPembelajaran = () => {
+  const router = useRouter(); // <-- inisialisasi router
   const [isModalOpen, setIsModalOpen] = useState(true);
 
   const materiData = [
@@ -39,19 +41,6 @@ const MateriPembelajaran = () => {
     },
   ];
 
-  if (!isModalOpen) {
-    return (
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-        <button
-          onClick={() => setIsModalOpen(true)}
-          className="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors"
-        >
-          Buka Materi Pembelajaran
-        </button>
-      </div>
-    );
-  }
-
   return (
     <div className="relative min-h-screen overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-gray-300 to-gray-400 opacity-80"></div>
@@ -62,7 +51,7 @@ const MateriPembelajaran = () => {
 
       <div className="relative z-20 mx-4 bg-white rounded-t-3xl shadow-2xl min-h-[70vh] mt-8">
         <button
-          onClick={() => setIsModalOpen(false)}
+          onClick={() => router.push("/dashboard")}
           className="absolute top-6 right-6 z-30 bg-gray-100 hover:bg-gray-200 rounded-full p-2 transition-colors"
         >
           <X className="w-6 h-6 text-gray-600" />

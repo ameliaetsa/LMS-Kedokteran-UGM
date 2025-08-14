@@ -22,11 +22,10 @@ export default function Dashboard() {
 
         {/* Bagian Card Materi */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 ">
-<CourseCard title="Materi" buttonText="Mulai Baca" imageSrc="/dashboard/materi.png" href="/materi" />
-<CourseCard title="LMS" buttonText="Mulai Belajar" imageSrc="/dashboard/lms.png" href="/lms"/>
-<CourseCard title="Simulator" buttonText="Mulai Simulasi" imageSrc="/dashboard/v.png" href="/simulator"/>
-<CourseCard title="Forum Chat" buttonText="Mulai Chat" imageSrc="/dashboard/forum.png" href="/chat" />
-
+          <CourseCard title="Materi" buttonText="Mulai Baca" imageSrc="/dashboard/materi.png" href="/materi" />
+          <CourseCard title="LMS" buttonText="Mulai Belajar" imageSrc="/dashboard/lms.png" href="/dashboard/lms" />
+          <CourseCard title="Simulator" buttonText="Mulai Simulasi" imageSrc="/dashboard/v.png" href="/simulator" />
+          <CourseCard title="Forum Chat" buttonText="Mulai Chat" imageSrc="/dashboard/forum.png" href="/chat" />
         </div>
       </div>
     </div>
