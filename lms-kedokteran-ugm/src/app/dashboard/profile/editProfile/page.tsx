@@ -7,7 +7,7 @@ import { useProfileStore } from "@/services/data/profileData";
 export default function EditProfile() {
   const router = useRouter();
   const profile = useProfileStore();
-  const setProfile = useProfileStore((state: { setProfile: any; }) => state.setProfile);
+  const setProfile = useProfileStore((state: { setProfile: any }) => state.setProfile);
 
   const [isOpen, setIsOpen] = useState(true);
   const [form, setForm] = useState({ ...profile });
@@ -43,18 +43,17 @@ export default function EditProfile() {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 animate-fadeIn">
+    <div className="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50 animate-fadeIn">
       <div className="bg-white rounded-2xl shadow-xl p-6 w-[520px] relative animate-slideUp">
-        
         {/* Tombol Close */}
         <button
           onClick={handleCancel}
-          className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-xl"
+          className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-xl cursor-pointer transition-colors"
         >
           ✕
         </button>
 
-        <h2 className="text-xl font-bold mb-6 text-center">Edit Profile</h2>
+        <h2 className="text-xl font-bold text-black mb-6 text-center">Edit Profile</h2>
 
         {/* Foto */}
         <div className="flex flex-col items-center mb-6">
@@ -67,7 +66,7 @@ export default function EditProfile() {
               className="object-cover w-full h-full"
             />
           </div>
-          <label className="mt-3 cursor-pointer bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg shadow">
+          <label className="mt-3 cursor-pointer bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg shadow transition-colors">
             Ganti Foto
             <input type="file" accept="image/*" onChange={handlePhotoChange} className="hidden" />
           </label>
@@ -80,14 +79,14 @@ export default function EditProfile() {
             name="name"
             value={form.name}
             onChange={handleChange}
-            className="border rounded-md px-3 py-2 bg-gray-50 focus:outline-green-500"
+            className="border rounded-md px-3 py-2 text-black bg-gray-50 focus:outline-none focus:ring-2 focus:ring-green-500 cursor-text"
             placeholder="Nama Lengkap"
           />
           <select
             name="gender"
             value={form.gender}
             onChange={handleChange}
-            className="border rounded-md px-3 py-2 bg-gray-50 focus:outline-green-500"
+            className="border rounded-md px-3 py-2 text-black bg-gray-50 focus:outline-none focus:ring-2 focus:ring-green-500 cursor-pointer"
           >
             <option value="Female">Female</option>
             <option value="Male">Male</option>
@@ -97,7 +96,7 @@ export default function EditProfile() {
             name="profesi"
             value={form.profesi}
             onChange={handleChange}
-            className="border rounded-md px-3 py-2 bg-gray-50 focus:outline-green-500"
+            className="border rounded-md px-3 py-2 bg-gray-50 text-black focus:outline-none focus:ring-2 focus:ring-green-500 cursor-text"
             placeholder="Profesi"
           />
           <input
@@ -105,7 +104,7 @@ export default function EditProfile() {
             name="memberId"
             value={form.memberId}
             readOnly
-            className="border rounded-md px-3 py-2 bg-gray-100"
+            className="border rounded-md px-3 py-2 bg-gray-100 text-black cursor-not-allowed"
           />
         </div>
 
@@ -113,13 +112,13 @@ export default function EditProfile() {
         <div className="flex gap-4 mt-6 justify-center">
           <button
             onClick={handleSave}
-            className="bg-green-700 hover:bg-green-800 text-white px-6 py-2 rounded-lg shadow"
+            className="bg-green-700 hover:bg-green-800 text-white px-6 py-2 rounded-lg shadow cursor-pointer transition-colors"
           >
             Simpan
           </button>
           <button
             onClick={handleCancel}
-            className="bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-lg shadow"
+            className="bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-lg shadow cursor-pointer transition-colors"
           >
             Batal
           </button>
@@ -135,12 +134,22 @@ export default function EditProfile() {
           animation: slideUp 0.3s ease-in-out;
         }
         @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
         }
         @keyframes slideUp {
-          from { transform: translateY(20px); opacity: 0; }
-          to { transform: translateY(0); opacity: 1; }
+          from {
+            transform: translateY(20px);
+            opacity: 0;
+          }
+          to {
+            transform: translateY(0);
+            opacity: 1;
+          }
         }
       `}</style>
     </div>
