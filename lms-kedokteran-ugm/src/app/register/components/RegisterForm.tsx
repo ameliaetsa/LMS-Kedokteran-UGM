@@ -54,7 +54,7 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
               id="fullName"
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
-              placeholder="Enter your first name"
+
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors"
               required
             />
@@ -92,7 +92,7 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
 
         {/* Gender Section */}
         <div>
-          <h4 className="text-sm font-medium text-gray-700 mb-3">Gender</h4>
+
           <div className="flex flex-wrap gap-4">
             <label className="flex items-center">
               <input
@@ -103,7 +103,7 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
                 onChange={(e) => setGender(e.target.value)}
                 className="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300"
               />
-              <span className="ml-2 text-sm text-gray-700">Male</span>
+
             </label>
             <label className="flex items-center">
               <input
@@ -113,8 +113,7 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
                 checked={gender === 'female'}
                 onChange={(e) => setGender(e.target.value)}
                 className="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300"
-              />
-              <span className="ml-2 text-sm text-gray-700">Female</span>
+
             </label>
           </div>
         </div>

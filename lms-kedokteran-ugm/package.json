@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-
+    "@types/next": "^8.0.7",
+    "lucide-react": "^0.539.0",
+    "next": "^15.4.6"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
